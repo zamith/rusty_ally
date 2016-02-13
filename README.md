@@ -9,5 +9,7 @@ At some point this might be transformed into a proper CLI.
 
 ## Getting Started
 
-`cargo install rusty_ally`
-`aa_rescheduler`
+```
+cargo install rusty_ally
+aa_rescheduler
+```
