@@ -3,6 +3,16 @@ name = "rusty_ally"
 version = "0.1.0"
 authors = ["Zamith <luis@zamith.pt>"]
 build = "build.rs"
+license = "MIT OR Apache-2.0"
+description = "A set of binaries to help you control ActionAlly"
+documentation = "https://github.com/zamith/rusty_ally"
+homepage = "https://github.com/zamith/rusty_ally"
+repository = "https://github.com/zamith/rusty_ally"
+keywords = ["productivity", "binaries"]
+
+[[bin]]
+name = "aa_rescheduler"
+path = "src/bin/reschedule_to_monday.rs"
 
 [build-dependencies]
 syntex = { version = "0.26.0", optional = true }
@@ -10,7 +20,8 @@ diesel_codegen = { version = "^0.5.0", default-features = false, features = ["sq
 dotenv_codegen = { version = "0.8.0", optional = true }
 
 [dependencies]
-diesel = { path = "../diesel/diesel", features = ["sqlite"] }
+chrono = "0.2.0"
+diesel = "^0.5.0"
 diesel_codegen = { version = "^0.5.0", default-features = false, features = ["sqlite"] }
 dotenv = "0.8.0"
 dotenv_macros = { version = "0.8.0", optional = true }

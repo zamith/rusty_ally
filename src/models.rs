@@ -1,4 +1,11 @@
-// use super::schema::tasks;
+use super::schema::tasks;
+
+#[insertable_into(tasks)]
+pub struct NewTask<'a> {
+    pub task: &'a str,
+    pub day: &'a str,
+    pub status: &'a str,
+}
 
 #[derive(Queryable)]
 pub struct Task {

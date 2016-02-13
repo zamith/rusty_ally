@@ -25,3 +25,20 @@ pub fn establish_connection() -> SqliteConnection {
     SqliteConnection::establish(&database_url).
         expect(&format!("Error connection to {}", database_url))
 }
+
+use self::models::{NewTask};
+
+pub fn create_task(conn: &SqliteConnection, task: &str, day: &str, status: &str) -> () {
+    use schema::tasks;
+
+    let new_task = NewTask {
+        task: task,
+        day: day,
+        status: status,
+    };
+
+    diesel::insert(&new_task)
+        .into(tasks::table)
+        .execute(conn)
+        .expect("Error saving task");
+}
