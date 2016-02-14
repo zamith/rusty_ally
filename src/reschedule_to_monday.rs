@@ -1,15 +1,11 @@
-extern crate rusty_ally;
-extern crate diesel;
-extern crate chrono;
+use super::database::*;
 
+use models::{Task};
 use chrono::*;
+use diesel::prelude::*;
 
-use self::rusty_ally::*;
-use self::rusty_ally::models::*;
-use self::diesel::prelude::*;
-
-fn main() {
-    use rusty_ally::schema::tasks::dsl::*;
+pub fn reschedule() {
+    use schema::tasks::dsl::*;
 
     let connection = establish_connection();
 
@@ -40,6 +36,7 @@ fn on_last_friday<F>(function: F) -> ()
 
     let today: Date<Local> = Local::today();
     let last_friday = match today.weekday() {
+        Weekday::Sun => Some(today.pred().pred()),
         Weekday::Sat => Some(today.pred()),
         Weekday::Fri => Some(today),
         _ => None,
