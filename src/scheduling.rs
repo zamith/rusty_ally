@@ -4,7 +4,7 @@ use models::{Task};
 use chrono::*;
 use diesel::prelude::*;
 
-pub fn reschedule() {
+pub fn reschedule_to_monday() {
     use schema::tasks::dsl::*;
 
     let connection = establish_connection();
@@ -29,6 +29,16 @@ pub fn reschedule() {
             );
         }
     })
+}
+
+pub fn schedule(description: &str, date: &str) {
+    let connection = establish_connection();
+
+    create_task(&connection,
+        description,
+        date,
+        "not-done"
+    );
 }
 
 fn on_last_friday<F>(function: F) -> ()
