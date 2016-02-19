@@ -1,9 +1,9 @@
 [package]
 name = "rusty_ally"
-version = "0.2.2"
+version = "0.2.3"
 authors = ["Zamith <luis@zamith.pt>"]
 license = "MIT OR Apache-2.0"
-description = "A set of binaries to help you control ActionAlly"
+description = "A CLI to help you control ActionAlly"
 documentation = "https://github.com/zamith/rusty_ally"
 homepage = "https://github.com/zamith/rusty_ally"
 repository = "https://github.com/zamith/rusty_ally"
