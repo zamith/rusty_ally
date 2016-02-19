@@ -1,6 +1,6 @@
 [package]
 name = "rusty_ally"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Zamith <luis@zamith.pt>"]
 license = "MIT OR Apache-2.0"
 description = "A set of binaries to help you control ActionAlly"
