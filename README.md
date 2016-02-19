@@ -7,10 +7,22 @@ from the terminal, as a bonus.
 
 ## Getting Started
 
+You can install rally in one of two ways:
+
+**Homebrew**
+
 ```
-cargo install rusty_ally
-rally help
+brew tap subvisual/formulae
+brew install rally
 ```
+
+**Cargo**
+
+```
+cargo install rally
+```
+
+Then run `rally help` to see all the commands available.
 
 ## Database file
 
